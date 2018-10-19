@@ -12,23 +12,11 @@
 		</style>
 	</head>
 	<body>
-		
-		<!-- 头部 -->
-		<header class="ui-header clearfix h8 f46 pl3 pr3 color8 bg-color-success t-c">
-			<div id="divMain" class="ui-header-l fl w5">
-				<b class="icon iconfont icon-sortlight"></b>
-			</div>
-			<div class="ui-header-c fl f30 w59">
-				ALBUM 
-			</div>
-			<div id="divF5" class="ui-header-r fl w5">
-			</div>
-		</header>
-		
+				
 		<span id="spanImg">
 		</span>
 		
-		<p style="font-size:24px;">
+		<p style="font-size:34px;">
 			(づ｡◕ᴗᴗ◕｡)づ 好好的！
 		</p>
 	<video id="videoMa" style="display: none;" autoplay="autoplay" loop="loop">
@@ -41,6 +29,11 @@
 	<script type="text/javascript" src="js/miniMobile.js" ></script>		
 	<script>
 	$(function(){
+		
+		
+			$("#musicVideo")[0].load(); //重新加载
+			$("#musicVideo")[0].play();
+		
 		
 		var imgSrcs = [
 			"img/003.jpg","img/006.jpg","img/029.jpg","img/041.jpg","img/043.jpg","img/054.jpg","img/055.jpg",

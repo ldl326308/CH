@@ -13,18 +13,6 @@
 	</head>
 	<body>
 		
-		<!-- 头部 -->
-		<header class="ui-header clearfix h8 f46 pl3 pr3 color8 bg-color-success t-c">
-			<div id="divMain" class="ui-header-l fl w5">
-				<b class="icon iconfont icon-sortlight"></b>
-			</div>
-			<div class="ui-header-c fl f30 w59">
-				BEST-FRIEND
-			</div>
-			<div class="ui-header-r fl w5">
-				刷新
-			</div>
-		</header>
 		
 				<!-- 登入 -->
 		<div class="p3 f30 f30 w75">
@@ -46,7 +34,7 @@
 		</p>
 		
 		<video style="display: none;" id="myVideo" autoplay="autoplay" loop="loop">
-			<source src="music/酒伴到久伴.mp3"></source>
+			<source id="indexVo" src="music/酒伴到久伴.mp3"></source>
 		</video>	
 		
 	<script type="text/javascript" src="js/jquery-1.11.3.js" ></script>
@@ -55,7 +43,8 @@
 	<script type="text/javascript" src="js/miniMobile.js" ></script>
 	<script type="text/javascript">
 		
-	$(function(){
+
+		
 		
 		$("#divF5").click(function(){
 			window.location.href="index.html";
@@ -102,7 +91,6 @@
 		});
 		
 		
-	});
 	</script>				
 	</body>
 </html>

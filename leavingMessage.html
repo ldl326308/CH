@@ -14,18 +14,6 @@
 	</head>
 	<body>
 		
-			
-	<!-- 头部 -->
-	<header class="ui-header clearfix h8 f46 pl3 pr3 color8 bg-color-success t-c">
-		<div id="divMain" class="ui-header-l fl w5">
-			<b class="icon iconfont icon-sortlight"></b>
-		</div>
-		<div class="ui-header-c fl f30 w59">
-			LEAVING-MESSAGE 
-		</div>
-		<div id="divF5" class="ui-header-r fl w5">
-		</div>
-	</header>
 		
 	<span id="leavingMain"></span>		
 		
@@ -38,15 +26,6 @@
 	<script type="text/javascript" src="js/zepto.min.js" ></script>
 	<script type="text/javascript" src="js/miniMobile.js" ></script>
 	<script type="text/javascript">
-		
-		$("#divMain").click(function(){
-			window.location.href="main.html";
-		});
-		
-		//刷新按钮
-		$("#divF5").click(function(){
-			window.location.href="leavingMessage.html";
-		});
 		
 				
 		var leavings = ["Special you!","我何时才能想你一样优秀！","希望我可以无论对错，都站在你那边。",
@@ -77,6 +56,11 @@
 					leavingMain.append(marquee);
 				
 				}
+				
+				
+			$("#musicVideo")[0].load(); //重新加载
+			$("#musicVideo")[0].play();
+				
 			});		
 	</script>
 	</body>

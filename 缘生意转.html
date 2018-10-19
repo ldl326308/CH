@@ -80,7 +80,7 @@
 				<p>微雨小桥 燕将旧巢念 又年</p></br>	
 
 			<video style="display:none;" autoplay="autoplay" loop="loop">
-				<source src="music/司夏、河图 - 缘生意转.mp3"></source>
+				<source id="indexVo" src="music/司夏、河图 - 缘生意转.mp3"></source>
 			</video>	
 
 
@@ -90,6 +90,11 @@
 		<script type="text/javascript" src="js/miniMobile.js" ></script>
 		<script>
 			$(function(){
+				
+				
+			$("#indexVo")[0].load(); //重新加载
+			$("#indexVo")[0].play();
+				
 				var colors = ["green","red","yellow","chartreuse","blue"];
 				var p = $("p");
 				for (var i = 0; i <p.length; i++) {

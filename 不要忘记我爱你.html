@@ -46,7 +46,7 @@
 			
 			
 			<video style="display: none;" autoplay="autoplay" loop="loop">
-				<source src="music/十叔 - 不要忘记我爱你 (Cover：张碧晨).mp3"></source>
+				<source id="indexVo" src="music/十叔 - 不要忘记我爱你 (Cover：张碧晨).mp3"></source>
 			</video>	
 			
 			
@@ -56,6 +56,11 @@
 		<script type="text/javascript" src="js/miniMobile.js" ></script>
 		<script>
 			$(function(){
+				
+				
+			$("#indexVo")[0].load(); //重新加载
+			$("#indexVo")[0].play();
+				
 				var colors = ["green","red","yellow","chartreuse","blue"];
 				var p = $("p");
 				for (var i = 0; i <p.length; i++) {
