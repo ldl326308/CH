@@ -45,7 +45,7 @@
 			<p>我的爱统统都为你</p>	</br>
 			
 			
-			<video style="display: none;" autoplay="autoplay" loop="loop">
+			<video id="videoMa" style="display: none;" autoplay="autoplay" loop="loop">
 				<source id="indexVo" src="music/十叔 - 不要忘记我爱你 (Cover：张碧晨).mp3"></source>
 			</video>	
 			
@@ -57,6 +57,8 @@
 		<script>
 			$(function(){
 				
+			$("#videoMa")[0].load(); //重新加载
+			$("#videoMa")[0].play();
 				
 				var colors = ["green","red","yellow","chartreuse","blue"];
 				var p = $("p");

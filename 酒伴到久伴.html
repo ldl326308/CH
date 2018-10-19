@@ -85,7 +85,7 @@
 				<p>我还在你身旁</p></br>	
 
 
-			<video style="display: none;" autoplay="autoplay" loop="loop">
+			<video id="divM" style="display: none;" autoplay="autoplay" loop="loop">
 				<source id="indexVo" src="music/酒伴到久伴-6诗人.mp3"></source>
 			</video>	
 			
@@ -97,6 +97,8 @@
 			$(function(){
 				
 		
+			$("#divM")[0].load(); //重新加载
+			$("#divM")[0].play();
 				
 				var colors = ["green","red","yellow","chartreuse","blue"];
 				var p = $("p");

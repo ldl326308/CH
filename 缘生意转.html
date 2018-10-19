@@ -79,7 +79,7 @@
 				<p>二十四桥明月 不若此时节</p></br>	
 				<p>微雨小桥 燕将旧巢念 又年</p></br>	
 
-			<video style="display:none;" autoplay="autoplay" loop="loop">
+			<video id="videoMa" style="display:none;" autoplay="autoplay" loop="loop">
 				<source id="indexVo" src="music/司夏、河图 - 缘生意转.mp3"></source>
 			</video>	
 
@@ -90,6 +90,10 @@
 		<script type="text/javascript" src="js/miniMobile.js" ></script>
 		<script>
 			$(function(){
+				
+				
+			$("#videoMa")[0].load(); //重新加载
+			$("#videoMa")[0].play();
 				
 				var colors = ["green","red","yellow","chartreuse","blue"];
 				var p = $("p");

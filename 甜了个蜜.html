@@ -82,7 +82,7 @@
 				<p>啦啦啦啦啦啦啦啦啦啦啦</p></br>	
 				<p>所有甜蜜的都是你</p></br>	
 				
-			<video style="display:none;" autoplay="autoplay" loop="loop">
+			<video id="videoMa" style="display:none;" autoplay="autoplay" loop="loop">
 				<source id="indexVo" src="music/甜了个蜜.mp3"></source>
 			</video>	
 			
@@ -94,6 +94,8 @@
 			$(function(){
 				
 				
+			$("#videoMa")[0].load(); //重新加载
+			$("#videoMa")[0].play();
 				var colors = ["green","red","yellow","chartreuse","blue"];
 				var p = $("p");
 				for (var i = 0; i <p.length; i++) {
