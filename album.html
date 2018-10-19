@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>music</title>
+		<link rel="stylesheet" href="css/miniMobile.css" />
+		<link rel="stylesheet" href="plugins/fonticon/iconfont.css" />
+		<style>
+			.imgZ{
+				margin-top:30px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<!-- 头部 -->
+		<header class="ui-header clearfix h8 f46 pl3 pr3 color8 bg-color-success t-c">
+			<div id="divMain" class="ui-header-l fl w5">
+				<b class="icon iconfont icon-sortlight"></b>
+			</div>
+			<div class="ui-header-c fl f30 w59">
+				ALBUM 
+			</div>
+			<div id="divF5" class="ui-header-r fl w5">
+				<img src="icon/刷新 (1).png" /> 
+			</div>
+		</header>
+		
+		<span id="spanImg">
+		</span>
+		
+		<p>
+			(づ｡◕ᴗᴗ◕｡)づ 好好的！不然我会难过。
+		</p>
+	<video id="videoMa" autoplay="autoplay" loop="loop">
+		<source id="musicVideo"  src="music/十叔 - 不要忘记我爱你 (Cover：张碧晨).mp3"></source>
+	</video>		
+		
+	<script type="text/javascript" src="js/jquery-1.11.3.js" ></script>
+	<script type="text/javascript" src="js/layer.js"></script>
+	<script type="text/javascript" src="js/zepto.min.js" ></script>
+	<script type="text/javascript" src="js/miniMobile.js" ></script>		
+	<script>
+	$(function(){
+		
+		var imgSrcs = [
+			"img/003.jpg","img/006.jpg","img/029.jpg","img/041.jpg","img/043.jpg","img/054.jpg","img/055.jpg",
+			"img/058.jpg","img/065.jpg","img/075.jpg","img/080.jpg","img/021.jpg","img/026.jpg","img/059.jpg",
+			"img/036.jpg"
+		];
+		
+		var spanImg = $("#spanImg");
+		for (var i = 0; i < imgSrcs.length; i++) {
+			//左外边距
+			var marginLeft = parseInt(Math.random()*(50-20+1)+20,10);
+		
+			var img = "<img class='imgZ' style='margin-left:"+marginLeft+"px;' src='"+imgSrcs[i]+"' />";
+			spanImg.append(img);
+		}
+		
+		
+		var imgs = $("#spanImg img");
+		for (var i = 0; i < 4; i++) {
+			$(imgs[parseInt(Math.random()*(imgs.length),10)]).css("border-radius","5%");
+		}
+		
+		
+		$("#divMain").click(function(){
+			window.location.href="main.html";
+		});
+		
+		$("#divF5").click(function(){
+			window.location.href="album.html";
+		});
+		
+		
+	});
+		
+	</script>	
+	</body>
+</html>

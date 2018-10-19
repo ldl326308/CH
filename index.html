@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>登入</title>
+		<link rel="stylesheet" href="css/miniMobile.css" />
+		<link rel="stylesheet" href="plugins/fonticon/iconfont.css" />
+		<style>
+			video{
+				display:none;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<!-- 头部 -->
+		<header class="ui-header clearfix h8 f46 pl3 pr3 color8 bg-color-success t-c">
+			<div id="divMain" class="ui-header-l fl w5">
+				<b class="icon iconfont icon-sortlight"></b>
+			</div>
+			<div class="ui-header-c fl f30 w59">
+				BEST-FRIEND
+			</div>
+			<div class="ui-header-r fl w5">
+				<img src="icon/刷新 (1).png" /> 
+			</div>
+		</header>
+		
+				<!-- 登入 -->
+		<div class="p3 f30 f30 w75">
+			<form>
+				<div class="pt2 pb2"></div>
+				<div>
+					密码：
+					<input type="password" id="txtPwd" class="w59 h10 form-control" placeholder="请输入密码" />
+				</div>
+				<div class="t-c mt5">
+					<input type="button" id="btnLogn" class="btn f30 btn-primary radius10 p2 w50" value="LOGIN" />
+				</div>
+			</form>
+		</div>
+		
+		<div class="p3 f30 f30 w75"></div>
+		<p style="text-align: center;">
+			<meter id="xz" max="100" min="0" value="0" style="width:70%;height: 20px;"></meter>
+		</p>
+		
+		<video id="myVideo" autoplay="autoplay" loop="loop">
+			<source src="music/酒伴到久伴.mp3"></source>
+		</video>	
+		
+	<script type="text/javascript" src="js/jquery-1.11.3.js" ></script>
+	<script type="text/javascript" src="js/layer.js"></script>
+	<script type="text/javascript" src="js/zepto.min.js" ></script>
+	<script type="text/javascript" src="js/miniMobile.js" ></script>
+	<script type="text/javascript">
+		
+	$(function(){
+		
+		$("#divF5").click(function(){
+			window.location.href="index.html";
+		});
+		
+		//登入验证
+		$("#btnLogn").click(function(){
+
+			var pwd = $("#txtPwd").val();
+
+			//日期获得
+			var myDate = new Date();
+			var month = myDate.getMonth()+1;
+			var day = myDate.getDate();
+			
+			if(month.length==1){
+				month = "0"+month;
+			}
+			
+			if(day.length==1){
+				day = "0"+day;
+			}
+			
+			var truePwd = "CH"+month+""+day;
+			
+			
+			if(pwd == truePwd){  //登入验证通过
+				
+				var t =	setInterval(function(){
+						var value = document.getElementById("xz").value;
+						if(value==100){
+							clearInterval(t); 
+							$("#myVideo").muted=true;
+							window.location.href="main.html";
+						}else{
+							document.getElementById("xz").value = value+3;
+						}					
+					}, 100);
+						
+			} else{
+				alert("验证失败了")
+			}
+			
+		});
+		
+		
+	});
+	</script>				
+	</body>
+</html>

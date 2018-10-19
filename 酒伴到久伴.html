@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>music</title>
+		<link rel="stylesheet" href="css/miniMobile.css" />
+		<link rel="stylesheet" href="plugins/fonticon/iconfont.css" />
+		<style>			
+			p{
+				text-align: center;
+				font-family: 楷体;
+				font-size: 24px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<!-- 头部 -->
+		<header class="ui-header clearfix h8 f46 pl3 pr3 color8 bg-color-success t-c">
+			<div id="divMain" class="ui-header-l fl w5">
+				<b class="icon iconfont icon-sortlight"></b>
+			</div>
+			<div class="ui-header-c fl f30 w59">
+				MUSIC 
+			</div>
+			<div id="divF5" class="ui-header-r fl w5">
+			</div>
+		</header>
+				<p>《酒伴到久伴》</p></br>	
+				<p>剪下一段繁华</p></br>	
+				<p>没留住的她</p></br>	
+				<p>你所在的远方</p></br>	
+				<p>可曾牵挂</p></br>	
+				<p>那些青涩</p></br>	
+				<p>在慢慢过渡</p></br>	
+				<p>在一点点的成熟</p></br>	
+				<p>在记忆深处</p></br>	
+				<p>那天梦在深处</p></br>	
+				<p>我归去的路</p></br>	
+				<p>闹钟轻摇孤独</p></br>	
+				<p>醒来微苦</p></br>	
+				<p>仰望过天</p></br>	
+				<p>想你在我身边</p></br>	
+				<p>被风吻过思念</p></br>	
+				<p>也走过失眠</p></br>	
+				<p>你说你很喜欢</p></br>	
+				<p>孤单了被人惯</p></br>	
+				<p>感受你的不安</p></br>	
+				<p>我的思念分隔两段</p></br>	
+				<p>一端隔很远</p></br>	
+				<p>一端留身边</p></br>	
+				<p>眺望你归来的路</p></br>	
+				<p>隐藏一点感触</p></br>	
+				<p>心里的温度</p></br>	
+				<p>融化最后一点孤独</p></br>	
+				<p>付出了全部</p></br>	
+				<p>追随你脚步</p></br>	
+				<p>从散场到情长</p></br>	
+				<p>从沙漠到海洋</p></br>	
+				<p>就余生装行囊</p></br>	
+				<p>就住在你胸膛</p></br>	
+				<p>从酒伴到久伴</p></br>	
+				<p>从清晨到夜晚</p></br>	
+				<p>当风耳边弥漫</p></br>	
+				<p>我还在你身旁</p></br>	
+				<p>你说你很喜欢</p></br>	
+				<p>孤单了被人惯</p></br>	
+				<p>感受你的不安</p></br>	
+				<p>我的思念分隔两段</p></br>	
+				<p>一端隔很远</p></br>	
+				<p>一端留身边</p></br>	
+				<p>眺望你归来的路</p></br>	
+				<p>隐藏一点感触</p></br>	
+				<p>心里的温度</p></br>	
+				<p>融化最后一点孤独</p></br>	
+				<p>付出了全部</p></br>	
+				<p>追随你脚步</p></br>	
+				<p>从散场到情长</p></br>	
+				<p>从沙漠到海洋</p></br>	
+				<p>就余生装行囊</p></br>	
+				<p>就住在你胸膛</p></br>	
+				<p>从酒伴到久伴</p></br>	
+				<p>从清晨到夜晚</p></br>	
+				<p>当风耳边弥漫</p></br>	
+				<p>我还在你身旁</p></br>	
+
+
+			<video autoplay="autoplay" loop="loop">
+				<source src="music/酒伴到久伴-6诗人.mp3"></source>
+			</video>	
+			
+		<script type="text/javascript" src="js/jquery-1.11.3.js" ></script>
+		<script type="text/javascript" src="js/layer.js"></script>
+		<script type="text/javascript" src="js/zepto.min.js" ></script>
+		<script type="text/javascript" src="js/miniMobile.js" ></script>
+		<script>
+			$(function(){
+				var colors = ["green","red","yellow","chartreuse","blue"];
+				var p = $("p");
+				for (var i = 0; i <p.length; i++) {
+					$(p[i]).css("color",colors[i%(colors.length)]);
+				}
+				
+				$("#divMain").click(function(){
+					window.location.href="lyrics.html";
+				});
+				
+			});
+		</script>
+	</body>
+</html>
+			

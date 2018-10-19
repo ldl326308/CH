@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>music</title>
+		<link rel="stylesheet" href="css/miniMobile.css" />
+		<link rel="stylesheet" href="plugins/fonticon/iconfont.css" />
+		<style>			
+			p{
+				text-align: center;
+				font-family: 楷体;
+				font-size: 24px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<!-- 头部 -->
+		<header class="ui-header clearfix h8 f46 pl3 pr3 color8 bg-color-success t-c">
+			<div id="divMain" class="ui-header-l fl w5">
+				<b class="icon iconfont icon-sortlight"></b>
+			</div>
+			<div class="ui-header-c fl f30 w59">
+				MUSIC 
+			</div>
+			<div id="divF5" class="ui-header-r fl w5">
+			</div>
+		</header>
+
+				<p>《司夏、河图 - 缘生意转》</p></br>	
+				<p>词：照墨</p></br>	
+				<p>曲：Litterzy</p></br>	
+				<p>女：风吹皱了江南 书生执笔绘扇</p></br>	
+				<p>天色淡 渐渐染透青衫</p></br>	
+				<p>纸鸢拟作彩鸾 线断落她纸伞</p></br>	
+				<p>点落涟漪一瓣</p></br>	
+				<p>男：不辨暮色重山 云霞花树相欢</p></br>	
+				<p>泉东南 拨流水 作琴弹</p></br>	
+				<p>清阴多添倦懒 客来只称未还</p></br>	
+				<p>醒 落花衣襟沾</p></br>	
+				<p>女：念及初见 雪深惊鸿来</p></br>	
+				<p>梅花相似 一刹流云散</p></br>	
+				<p>天风浩然 却情何来哉</p></br>	
+				<p>如何意会言传</p></br>	
+				<p>女：十里长街走马 隔花见秋千</p></br>	
+				<p>九重回廊擦肩 又寻而不见</p></br>	
+				<p>八声甘州浅唱 宜珠玉山野</p></br>	
+				<p>意动提笔赋长句 七言</p></br>	
+				<p>男：六一亭上怀古 烹泉浮新叶</p></br>	
+				<p>三五各掌花灯 盈盈各眉眼</p></br>	
+				<p>二十四桥明月 不若此时节</p></br>	
+				<p>微雨小桥 燕将旧巢念 又年</p></br>	
+				<p>男：如何道是江南 书生执笔题扇</p></br>	
+				<p>风光好 何须念长安</p></br>	
+				<p>湖石垒作春山 不似她眉宛宛</p></br>	
+				<p>提裙历阶苍苔</p></br>	
+				<p>女：丹青堆叠几案 抬眼空翠渐晚</p></br>	
+				<p>算如今 春秋转 又几番</p></br>	
+				<p>烟霞长伴棋枰 鹊踏明月枝来</p></br>	
+				<p>举杯言笑偕欢</p></br>	
+				<p>男：念及初见 雪深惊鸿来</p></br>	
+				<p>梅花相似 一刹流云散</p></br>	
+				<p>女：天风浩然 却情何来哉</p></br>	
+				<p>如何意会言传</p></br>	
+				<p>男：一色风帘翠幕 不遮浮望眼</p></br>	
+				<p>抖落衣上风月 两三买花钱</p></br>	
+				<p>四顾云上鹤 人间看炊烟</p></br>	
+				<p>五更披衣画梅花 清浅</p></br>	
+				<p>女：六艺经传傍身 泠然动七弦</p></br>	
+				<p>八方遍历风物 九州多奇崛</p></br>	
+				<p>惟一人相念 半生不负也</p></br>	
+				<p>微雨小桥 燕还旧巢去 又年</p></br>	
+				<p>男：十里长街走马 隔花见秋千</p></br>	
+				<p>女：九重回廊擦肩 又寻而不见</p></br>	
+				<p>合：八声甘州浅唱 宜珠玉山野</p></br>	
+				<p>意动提笔赋长句 七言</p></br>	
+				<p>六一亭上怀古 烹泉浮新叶</p></br>	
+				<p>三五各掌花灯 盈盈各眉眼</p></br>	
+				<p>二十四桥明月 不若此时节</p></br>	
+				<p>微雨小桥 燕将旧巢念 又年</p></br>	
+
+			<video autoplay="autoplay" loop="loop">
+				<source src="music/司夏、河图 - 缘生意转.mp3"></source>
+			</video>	
+
+
+		<script type="text/javascript" src="js/jquery-1.11.3.js" ></script>
+		<script type="text/javascript" src="js/layer.js"></script>
+		<script type="text/javascript" src="js/zepto.min.js" ></script>
+		<script type="text/javascript" src="js/miniMobile.js" ></script>
+		<script>
+			$(function(){
+				var colors = ["green","red","yellow","chartreuse","blue"];
+				var p = $("p");
+				for (var i = 0; i <p.length; i++) {
+					$(p[i]).css("color",colors[i%(colors.length)]);
+				}
+				
+				$("#divMain").click(function(){
+					window.location.href="lyrics.html";
+				});
+				
+			});
+		</script>
+	</body>
+</html>
+			

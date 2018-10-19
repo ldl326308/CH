@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>DEEP-LOVE</title>
+		<meta charset="utf-8">  
+		<link rel="stylesheet" href="css/miniMobile.css" />
+		<link rel="stylesheet" href="plugins/fonticon/iconfont.css" />
+	</head>
+	<body>
+		
+		<!-- 头部 -->
+		<header class="ui-header clearfix h8 f46 pl3 pr3 color8 bg-color-success t-c">
+			<div id="divMain" class="ui-header-l fl w5">
+				<b class="icon iconfont icon-sortlight"></b>
+			</div>
+			<div class="ui-header-c fl f30 w59">
+				MISS
+			</div>
+			<div class="ui-header-r fl w5">
+				<img src="icon/刷新 (1).png" /> 
+			</div>
+		</header>
+		
+		
+ 		<div class="p3 f30">
+		 	<span id="btnAlbum" class="p2 pl3 pr3 btn radius5 btn-primary">Album</span>
+		 	<span id="btnMusic" class="p2 pl3 pr3 btn radius5 btn-info">music</span>
+		 	<span id="btnMessageWall" style="background-color: red;" class="p2 pl3 pr3 btn radius5 btn-warning">Leaving a message</span>
+		</div>
+		
+ 		<div class="p3 f30">
+		 	<span id="btnLyric" style="background-color: green;" class="p2 pl3 pr3 btn radius5 btn-primary">Lyric</span>
+		 	<span id="btnQita" class="p2 pl3 pr3 btn radius5 btn-warning">Other</span>
+		</div>
+
+		
+	<script type="text/javascript" src="js/jquery-1.11.3.js" ></script>
+	<script type="text/javascript" src="js/layer.js"></script>
+	<script type="text/javascript" src="js/zepto.min.js" ></script>
+	<script type="text/javascript" src="js/miniMobile.js" ></script>
+	<script type="text/javascript">
+	
+	$(function(){
+		
+		$("#btnLyric").click(function(){
+			window.location.href="lyrics.html";
+		});
+		
+		$("#divF5").click(function(){
+			window.location.href="main.html";
+		});
+		
+		$("#divMain").click(function(){
+			window.location.href="main.html";
+		});
+		
+		$("#btnMusic").click(function(){
+			window.location.href="music.html";
+		});
+		
+		$("#btnAlbum").click(function(){
+			window.location.href="album.html";
+		});
+		
+		$("#btnMessageWall").click(function(){
+			window.location.href="leavingMessage.html";
+		});
+		
+		$("#btnQita").click(function(){
+			alert("没有了哎，不知道写啥了 #_#")
+		});
+		
+	});	
+	</script>
+	
+	</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>留言墙</title>
+		<link rel="stylesheet" href="css/miniMobile.css" />
+		<link rel="stylesheet" href="plugins/fonticon/iconfont.css" />
+		<style>
+			marquee{
+				font-family: 楷体;
+				margin: 15px;
+			}
+		</style>
+	</head>
+	<body>
+		
+			
+	<!-- 头部 -->
+	<header class="ui-header clearfix h8 f46 pl3 pr3 color8 bg-color-success t-c">
+		<div id="divMain" class="ui-header-l fl w5">
+			<b class="icon iconfont icon-sortlight"></b>
+		</div>
+		<div class="ui-header-c fl f30 w59">
+			LEAVING-MESSAGE 
+		</div>
+		<div id="divF5" class="ui-header-r fl w5">
+				<img src="icon/刷新 (1).png" /> 
+		</div>
+	</header>
+		
+	<span id="leavingMain"></span>		
+		
+	<video id="videoMa" autoplay="autoplay" loop="loop">
+		<source id="musicVideo"  src="music/耿子涵 - 一个人的浪漫 (钢琴曲).mp3"></source>
+	</video>	
+	
+	<script type="text/javascript" src="js/jquery-1.11.3.js" ></script>
+	<script type="text/javascript" src="js/layer.js"></script>
+	<script type="text/javascript" src="js/zepto.min.js" ></script>
+	<script type="text/javascript" src="js/miniMobile.js" ></script>
+	<script type="text/javascript">
+		
+		$("#divMain").click(function(){
+			window.location.href="main.html";
+		});
+		
+		//刷新按钮
+		$("#divF5").click(function(){
+			window.location.href="leavingMessage.html";
+		});
+		
+				
+		var leavings = ["Special you!","我何时才能想你一样优秀！","希望我可以无论对错，都站在你那边。",
+				"你看，世界上只有一个你，所以... ^_^","有一天你会足够强大。","你会一直美丽下去 ^_^",
+				"愿你千帆阅尽，归来认识偏偏少女 ^_^ ","总有人山高路远，为你而来。","遇见你是我的幸运。",
+				"愿你眼中总有光芒，活成你想要的模样 ^_^ ","愿你一生努力，一生被爱，最想要的都拥有，得不到的都释怀。",
+				"我希望你足够强大，选中你所喜欢的，做你想做的，也希望你变得更优秀，遇见更优秀的人。",
+				"你呢，要做一个可爱的姑娘，要不烦世事，满心欢喜，不要睡的太晚，晚安。","天气微凉 ^_^",
+				"世界那么大，你要去看看~","要开心哈！ ^_^","当风耳边弥漫，我还在你身旁。","I miss you!",
+				"我们是怎么认识来着？ ^_^","加油 ^_^","我想见你。","喜欢你的声音","嘿嘿,我相信你 ^_^",
+				"要开森，要经常笑 ^_^ ","你笑起来的样子真的很好看 ~_~ ","希望如你所愿，希望你嫁给爱情。 ^_^",
+				"我记得你啊，记忆甚是深刻。哈哈...","希望你开心 ^_^","好久不见呐","记忆",
+				"希望看着你快乐 ^_^ ","我都会永远信赖你。","陪伴。","久伴","你是我想见的人.","多吃点哈 *_*",
+				"(っ•̀ω•́)っ✎⁾⁾ 我爱学习","☆￣(＞。☆)时光不老","(￣▽￣)／","ヾ(✿ﾟ▽ﾟ)ノ","ヾ(◍°∇°◍)ﾉﾞ","ヾ(o´∀｀o)ﾉ ",
+				"(｡◕ˇ∀ˇ◕)","(◕ᴗ◕✿)","✧(＾＿－✿ ","ψ(。。)   谁来帮我写作业","(ÒωÓױ)！作业走丢了","(｡•́__ก̀｡)上课让我忧郁了很多",
+				"_(:3」∠)_我的床需要我","(づ｡◕ᴗᴗ◕｡)づ","那难过的时候，我也挺想做点什么让你开心一点。","好好的啊"];
+				
+			
+			$(function(){
+				var leavingMain = $("#leavingMain");
+				var colors = ["BlueViolet","Chocolate","Coral","Cyan","DarkGreen","DarkOrange","DarkMagenta","DeepPink","LawnGreen"];
+				for (var i = 0; i < 17; i++) {
+					var index = parseInt(Math.random()*(leavings.length),10);
+					var colorIndex = parseInt(Math.random()*(colors.length),10);
+					var speed = parseInt(Math.random()*(10-5+1)+5,10);
+					var fontSize = parseInt(Math.random()*(60-40+1)+40,10);
+					var marquee = "<marquee style='color:"+colors[colorIndex]+";font-size:"+fontSize+"px;' scrollamount="+speed+">"+leavings[index]+"</marquee>";
+					leavingMain.append(marquee);
+				
+				}
+			});		
+	</script>
+	</body>
+</html>
