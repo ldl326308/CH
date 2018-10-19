@@ -18,7 +18,7 @@
 	<span id="leavingMain"></span>		
 		
 	<video id="videoMa" style="display: none;" autoplay="autoplay" loop="loop">
-		<source id="musicVideo"  src="music/耿子涵 - 一个人的浪漫 (钢琴曲).mp3"></source>
+		<source id="musicVideo"  src=""></source>
 	</video>	
 	
 	<script type="text/javascript" src="js/jquery-1.11.3.js" ></script>
@@ -27,8 +27,13 @@
 	<script type="text/javascript" src="js/miniMobile.js" ></script>
 	<script type="text/javascript">
 		
+		$(function(){
+			var musicName = 'music/耿子涵 - 一个人的浪漫 (钢琴曲).mp3';
+			
+			$("#musicVideo").attr("src",musicName);
 			$("#videoMa")[0].load(); //重新加载
 			$("#videoMa")[0].play();
+		});
 				
 		var leavings = ["Special you!","我何时才能想你一样优秀！","希望我可以无论对错，都站在你那边。",
 				"你看，世界上只有一个你，所以... ^_^","有一天你会足够强大。","你会一直美丽下去 ^_^",
