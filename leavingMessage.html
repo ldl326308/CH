@@ -24,13 +24,12 @@
 			LEAVING-MESSAGE 
 		</div>
 		<div id="divF5" class="ui-header-r fl w5">
-				<img src="icon/刷新 (1).png" /> 
 		</div>
 	</header>
 		
 	<span id="leavingMain"></span>		
 		
-	<video id="videoMa" autoplay="autoplay" loop="loop">
+	<video id="videoMa" style="display: none;" autoplay="autoplay" loop="loop">
 		<source id="musicVideo"  src="music/耿子涵 - 一个人的浪漫 (钢琴曲).mp3"></source>
 	</video>	
 	
@@ -73,7 +72,7 @@
 					var index = parseInt(Math.random()*(leavings.length),10);
 					var colorIndex = parseInt(Math.random()*(colors.length),10);
 					var speed = parseInt(Math.random()*(10-5+1)+5,10);
-					var fontSize = parseInt(Math.random()*(60-40+1)+40,10);
+					var fontSize = parseInt(Math.random()*(30-20+1)+20,10);
 					var marquee = "<marquee style='color:"+colors[colorIndex]+";font-size:"+fontSize+"px;' scrollamount="+speed+">"+leavings[index]+"</marquee>";
 					leavingMain.append(marquee);
 				
