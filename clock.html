@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html xmlns="http://java.sun.com/jsf/html">
+<head>
+    <meta charset="utf-8"/>
+    <title>HTML5 时钟</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        .clocks {
+            height: 500px;
+            margin: 0px auto;
+            position: relative;
+            width: 500px;
+        }
+
+        #lover-miss, #lover-word {
+            text-align: center;
+        }
+
+        #lover-miss span {
+            font-family: 华文琥珀;
+            margin: 10px;
+        }
+
+        #lover-word span {
+            font-family: 华文琥珀;
+            margin: 10px;
+        }
+
+        #lover, #time {
+            margin-left: 40px;
+        }
+
+        #lover-img{
+            width:100%;
+            height:300px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <h2 id="lover">
+        <span>L</span>
+        <span>O</span>
+        <span>V</span>
+        <span>E</span>
+        <span>R</span>
+    </h2>
+    <p><span id="time"></span></p>
+</header>
+<div class="clocks">
+    <canvas id="canvas" width="400" height="400"></canvas>
+</div>
+<div>
+    <p id="lover-miss">
+        <span>I</span>
+        <span>MISS</span>
+        <span>YOU</span>
+        <span>C</span>
+        <span>H</span>
+    </p>
+</div>
+<div style="margin-top:120px;margin-bottom:100px;">
+    <p id="lover-word">
+        <span style="color:aqua;font-size:40px;">是</span>
+        <span style="color:red;font-size:24px;">我</span>
+        <span style="color:purple;font-size: 26px;">的</span>
+        <span style="color:blue;font-size: 30px;">。</span>
+    </p>
+</div>
+<div id="lover-img">
+    <img src="img/lover.jpg"/>
+</div>
+</body>
+<script>
+
+    // load resources
+    var lover_words = ["我知道遇见你♥不容易", "错过了会很可惜", "我不希望余生都是回忆", "我希望余生都是你♥", "ILoveYou"];
+    var lover_word_colors = ["Red", "Fuchsia", "Gold", "Purple", "DodgerBlue", "Green","Aqua"];
+    var lover_word_fontSize = ["20px", "40px", "30px", "28px", "26px","35px"];
+    var colors = ["green", "blue", "pink", "#00FFFF", "DarkOrchid"];
+    var fontSize = ["20px", "40px", "26px", "30px", "22px"];
+    var lover_miss_colors = ["Aqua", "DeepPink", "OrangeRed ", "Tomato", "MediumOrchid"];
+    var lover_miss_fontSize = ["24px", "45px", "20px", "30px", "35px"];
+
+    var myTime = 0;  //时间计算
+    function lover_word() {
+        document.getElementById("lover-word").innerText = "";
+
+        //Splicing
+        var to_be_span = lover_words[myTime % 5].split("");
+        var myLoverWord = document.getElementById("lover-word");
+
+        for (var c = 0; c < to_be_span.length; c++) {
+            var newSpan = document.createElement("span");
+            newSpan.innerText = to_be_span[c];
+            myLoverWord.append(newSpan);
+        }
+
+        var lover_word_span = document.getElementById("lover-word").getElementsByTagName("span");
+
+
+
+        if (myTime == 0) {  //启动颜色渲染方法
+            lover_word_color(lover_word_span);
+            setInterval(function start(){lover_word_color(lover_word_span)}, 1000);
+        }
+
+        myTime = myTime + 1; //增长
+    }
+
+    //改变字体颜色
+    function lover_word_color(lover_word_span) {
+        for (var h = 0; h < lover_word_span.length; h++) {
+            lover_word_span[h].style["color"] = lover_word_colors[h % lover_word_colors.length];
+            lover_word_span[h].style["font-size"] = lover_word_fontSize[h % lover_word_fontSize.length];
+        }
+    }
+
+    // initialization
+    $(function () {
+        setInterval(lover_word, 7000); // loop lover_word
+        draw();
+    });
+
+    function draw() {
+
+        //时间
+        var date1 = new Date("2018-10-28");
+        var date2 = new Date();
+        var date3 = Math.ceil((date2.getTime() - date1.getTime()) / 1000);
+        document.getElementById("time").innerText = date3 + "秒";
+
+        //字体样式动态 左上
+        var spans = document.getElementById("lover").getElementsByTagName("span");
+
+        for (var h = date3, x = 0; x < spans.length; h++, x++) {
+            spans[x].style["color"] = colors[h % 5];
+            spans[x].style["font-size"] = fontSize[h % 5];
+        }
+
+        //中下
+        var lover_miss_spans = document.getElementById("lover-miss").getElementsByTagName("span");
+
+        for (var h = date3, x = 0; x < spans.length; h++, x++) {
+            lover_miss_spans[x].style["color"] = lover_miss_colors[h % 5];
+            lover_miss_spans[x].style["font-size"] = lover_miss_fontSize[h % 5];
+        }
+
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+        context.save();
+        context.translate(200, 200);
+        var deg = 2 * Math.PI / 12;
+
+        context.save();
+        context.beginPath();
+        for (var i = 0; i < 13; i++) {
+            var x = Math.sin(i * deg);
+            var y = -Math.cos(i * deg);
+            context.lineTo(x * 150, y * 150);
+        }
+        var c = context.createRadialGradient(0, 0, 0, 0, 0, 130);
+        c.addColorStop(0, "#21f");
+        c.addColorStop(1, "#0ef")
+        context.fillStyle = c;
+        context.fill();
+        context.closePath();
+        context.restore();
+
+        context.save();
+        context.beginPath();
+        for (var i = 1; i < 13; i++) {
+            var x1 = Math.sin(i * deg);
+            var y1 = -Math.cos(i * deg);
+            context.fillStyle = "#fff";
+            context.font = "bold 20px Calibri";
+            context.textAlign = 'center';
+            context.textBaseline = 'middle';
+            context.fillText(i, x1 * 120, y1 * 120);
+        }
+        context.closePath();
+        context.restore();
+
+        context.save();
+        context.beginPath();
+        for (var i = 0; i < 12; i++) {
+            var x2 = Math.sin(i * deg);
+            var y2 = -Math.cos(i * deg);
+            context.moveTo(x2 * 148, y2 * 148);
+            context.lineTo(x2 * 135, y2 * 135);
+        }
+        context.strokeStyle = '#fff';
+        context.lineWidth = 4;
+        context.stroke();
+        context.closePath();
+        context.restore();
+
+        context.save();
+        var deg1 = 2 * Math.PI / 60;
+        context.beginPath();
+        for (var i = 0; i < 60; i++) {
+            var x2 = Math.sin(i * deg1);
+            var y2 = -Math.cos(i * deg1);
+            context.moveTo(x2 * 146, y2 * 146);
+            context.lineTo(x2 * 140, y2 * 140);
+        }
+        context.strokeStyle = '#fff';
+        context.lineWidth = 2;
+        context.stroke();
+        context.closePath();
+        context.restore();
+
+        context.save();
+        context.strokeStyle = "#fff";
+        context.font = ' 34px sans-serif';
+        context.textAlign = 'center';
+        context.textBaseline = 'middle';
+        context.strokeText('love CH', 0, 65);
+        context.restore();
+
+        var time = new Date();
+        var h = (time.getHours() % 12) * 2 * Math.PI / 12;
+        var m = time.getMinutes() * 2 * Math.PI / 60;
+        var s = time.getSeconds() * 2 * Math.PI / 60;
+        context.save();
+        context.rotate(h + m / 12 + s / 720);
+        context.beginPath();
+        context.moveTo(0, 6);
+        context.lineTo(0, -85);
+        context.strokeStyle = "#fff";
+        context.lineWidth = 6;
+        context.stroke();
+        context.closePath();
+        context.restore();
+
+        context.save();
+        context.rotate(m + s / 60);
+        context.beginPath();
+        context.moveTo(0, 8);
+        context.lineTo(0, -105);
+        context.strokeStyle = "#fff";
+        context.lineWidth = 4;
+        context.stroke();
+        context.closePath();
+        context.restore();
+
+        context.save();
+        context.rotate(s);
+        context.beginPath();
+        context.moveTo(0, 10);
+        context.lineTo(0, -120);
+        context.strokeStyle = "#fff";
+        context.lineWidth = 2;
+        context.stroke();
+        context.closePath();
+        context.restore();
+        context.restore();
+        setTimeout(draw, 1000);
+    }
+
+
+</script>
+</body>
+</html>
